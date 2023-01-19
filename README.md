@@ -9,12 +9,12 @@ We used Pandas DataFrames, SQLite, and SQLAlchemy to create an engine from a SQL
 
 ## Results
 
-We imported the following dependencies in order to 
+We imported the following dependencies in order to connect python to the SQLite database file `
+
+![dependencies](https://github.com/willmino/surfs_up/blob/main/dependencies/dependencies.png)
 
 
-
-
-`engine = create_engine("sqlite:///hawaiii.sqlite")`
+`engine = create_engine("sqlite:///hawaii.sqlite")`
 
 # reflect an existing database into a new model
 `Base = automap_base()`
