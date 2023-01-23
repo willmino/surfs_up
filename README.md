@@ -104,7 +104,7 @@ From the statistical analysis of the summary tables we constructed for June and 
 
 ### Additional Queries
 
-If W. Avy wanted even more evidence to reinforce his investment decision he would need to see how the temperature measurement from each station lead to a very high degree of accuracy determining the average temeprature for each month.
+If W. Avy wanted even more evidence to reinforce his investment decision he would need to see how the temperature measurement from each station lead to a very high degree of accuracy determining the average temperature for each month.
 
 The first additional query we performed was to show that the average temperature taken in June was the same for all nine weather stations. To do this, we selected for the `Station.station` name and the average of all the temperature measurements at each station `func.avg(Measurement.obs)`. We again filtered the query by the date for June and used the `group_by()` function to group each average June temperature by the station name. We stored the results of the query in a dataframe. The resulting dataframe below showed that the temperatures taken at each station were identical. This was because the average temperature for each station in the month of June was the same. The high degree of accuracy in temperature measurements for each station was great data to help reinforce W. Avy's decision to invest in the Surf and Ice Cream shop.
 
