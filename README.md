@@ -87,7 +87,7 @@ The resulting summary statistics table was visualized below:
 
 ## Bulleted List Results
 
-* From all years in the `hawaii.sqlite` database, the mean temperature in Hawaii in the month of June was 74.94. The mean temperature in Hawaii the month of December was 71.04 There is a marginal difference of 3.9 degrees in the average temperature between the months of June and December. 
+* From all years in the `hawaii.sqlite` database, the mean temperature in Hawaii in the month of June was 74.94. The mean temperature in Hawaii in the month of December was 71.04 There is a marginal difference of 3.9 degrees in the average temperature between the months of June and December. 
 
 * Highlighting the pleasant nature of the Hawaiian weather, we can see that the first quartile of the data was at a temperature of 69 degrees. This meant that 75% of the temperature measurements were above 69 degrees. Statistically, a surfer would experience amazing 69 degree or higher temperature 75% of the time even in the month of December! This same logic applies to the temperature in the months of June. Since the first quartile of the data is at 74 degrees, 75% of the temperature readings from June are above 74 degrees. This is also highly farorable for Surfing and Ice cream.
 
