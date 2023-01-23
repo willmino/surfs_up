@@ -3,16 +3,16 @@
 ## Overview
 The purpose of this analysis was to help W. Avy, the primary investor in an upcoming "Surf and Ice Cream Shop" in Hawaii, with processing weather and temperature data into key figures. We wanted to show him some insights into the weather patterns around the months of June and December so that he would have enough statistical data to feel comfortable about openining the shop in such a location.
 ### Purpose
-We used Pandas DataFrames, SQLite, and SQLAlchemy to create an engine from a SQLite file containing all the weather data we needed. We then processed the weather data using SQL queries on SQLite database in order to observe some key weather statistics for the months of June and December in Hawaii.
+We used Pandas DataFrames, SQLite, and SQLAlchemy to create an engine from a SQLite file containing all the weather data we needed. We then processed the weather data using SQL queries on the SQLite database in order to observe some key weather statistics for the months of June and December in Hawaii.
 
 
 ## Results
 
-We imported the following dependencies in order to connect python to the SQLite database file `hawaii.sqlite`.
+We imported the following dependencies in order to connect python to the SQLite database file named `hawaii.sqlite`.
 
 ![dependencies](https://github.com/willmino/surfs_up/blob/main/dependencies/dependencies.png)
 
-We then created the engine and set `create_engine()` SQLAlchemy function the parameter to the name of the SQLite database. A Base class was declared using the SQLalchemy `automap_base()` function. This Base class was necessary because we first needed to create an instance of the database. Then, we could reflect this instance (Base) so that the tables of the database could be iterated through using our python code and SQLAlchemy queries. References were assigned to the variable `Measurement` and `Station`. We would then reference these variables as the tables through out our SQLite queries. The code block was summarized below:
+We then created the engine and set the `create_engine()` SQLAlchemy function parameter to the name of the SQLite database file. A Base class was declared using the SQLAlchemy `automap_base()` function. This Base class was necessary because we first needed to create an instance of the database. Then, we could reflect this instance (Base) so that the tables of the database could be iterated through using our python code and SQLAlchemy queries. References were assigned to the variable `Measurement` and `Station`. We would then reference these variables as the tables through out our SQLite queries. The code block was summarized below:
 
 `engine = create_engine("sqlite:///hawaii.sqlite")`
 
@@ -87,11 +87,11 @@ The resulting summary statistics table was visualized below:
 
 ## Bulleted List Results
 
-* From all years `hawaii.sqlite` database, the mean temperature in Hawaii in the month of June was 74.94. The mean temperature in Hawaii the month of December is 71.04 There is a marginal difference of 3.9 degrees in the average temperature between the months of June and December. 
+* From all years in the `hawaii.sqlite` database, the mean temperature in Hawaii in the month of June was 74.94. The mean temperature in Hawaii the month of December was 71.04 There is a marginal difference of 3.9 degrees in the average temperature between the months of June and December. 
 
-* Highlighting the pleasant nature of the Hawaiian weather, we can see that the first quartile of the data is at a temperature of 69 degrees. This means that 75% of the temperature measurements were above 69 degrees. Statistically, a surfer will experience amazing 69 degree or higher weather 75% of the time even in the month of December! This same logic applies to the temperature in the months of June. Since the first quartile of the data is at 74 degrees, 75% of the temperature readings from June are above 74 degrees. This is also highly farorable for Surfing and Ice cream.
+* Highlighting the pleasant nature of the Hawaiian weather, we can see that the first quartile of the data was at a temperature of 69 degrees. This meant that 75% of the temperature measurements were above 69 degrees. Statistically, a surfer would experience amazing 69 degree or higher temperature 75% of the time even in the month of December! This same logic applies to the temperature in the months of June. Since the first quartile of the data is at 74 degrees, 75% of the temperature readings from June are above 74 degrees. This is also highly farorable for Surfing and Ice cream.
 
-* There were less measurements taken in the month of December compared to June. December had 1517 temperature measurements taken and June had 1700 temperature measurements. If the previous 1517 measurements were accurate for the actual temperature experience in December, then additional measurements for December would likely not change the statistics. For example, if 200 more measurements were taken in the month of December, the mean would likely not change if the measurements were already accurate. However, if the additional measurements taken in December had cause the mean temperature to decrease, then it would suggest that the original temperature measurements in December did not have high accuracy.
+* There were less measurements taken in the month of December compared to June. December had 1517 temperature measurements taken and June had 1700 temperature measurements. If the previous 1517 measurements were accurate for the actual temperature exhibited in December, then additional measurements for December would likely not change the statistics. For example, if 200 more measurements had been taken in the month of December, the mean would likely not change if the measurements were already accurate. However, if the additional measurements taken in December had caused the mean temperature to decrease, then it would suggest that the original temperature measurements in December did not have high accuracy.
 
 
 
@@ -100,6 +100,26 @@ The resulting summary statistics table was visualized below:
 
 ## Summary
 
-In any given year from the `hawaii.sqlite` database, the mean temperature in Hawaii in the month of June is 74.94. The mean temperature in Hawaii in the month of December is 71.04 A marginal difference of 3.9 degrees in the average temperature between the months of June and December bodes very well for the year-long demand for surfing and ice cream in Hawaii. Since the temperature does not change much, accoding to the data, the moderately warm weather of Hawaii will entice customers to consume the Surf products and Ice Cream that the shop will have to offer. Since customers are likely to bring business to the shop all year long. W. Avy should feel confident in his investment.
+From the statistical analysis of the summary tables we constructed for June and December, the mean tempeartures in these months were 74.94 and 71.04 respectively. A small difference of 3.9 degrees in the average temperature between the months of June and December illustrated a high likelihood of favorable weather year-long for surfing and ice cream. This suggested that the location and weather would be the perfect conditions for the Surf and Ice Cream Shop and that the company could likely be successful. To further support this claim, the first quartile of temperature measurements for both June and December was at least 69 degrees. This suggested that 75% of the time, the weather would be highly favorable, and at least 69 degrees at this specific location. However, it might be possible that more measurements in the months of June and December could change the statistics such as the average temperature. We would only be able to tell if there was a larger sample of measurements for the next couple of years to compare to these previous measurements. One final precaution for fairweather consumers or inestors at the Surf and Ice Cream shop would be that the minimum temperature in the month of december was 56 degrees. This temperature would not be ideal for surfing or ice cream. To counter this, and further bolster investment support of the business, the high temperatures for the months of June and December were respectively 85 and 83 degrees. Overall, these temperature measurements would be highly conducive to the success of a "Surf and Ice Cream Shop" in Hawaii.
 
+If W. Avy wanted even further evidence to reinforce his investment decision he would need to see how the temperature measurement from each station lead to a very high degree of accuracy determining the average temeprature for each month.
+
+The first additional query we performed was to show that the average temperature taken in June was the same for all nine stations. To do this, we selected for the `Station.station` name and the average of all the temperature measurements gt each station `func.avg(Measurement.obs)`. We again filtered the date for June and used the `group_by()` function to group each average June temperature by the station name. We stored the results of the query in a dataframe and used the `.describe()` funcion once again to produce a statistics summary. The resulting 
+
+`June_stations = session.query(Station.station, func.avg(Measurement.tobs)).\`
+
+&nbsp;&nbsp;&nbsp;&nbsp;`filter(Measurement.date.like('%-06-%')).\`
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`group_by(Station.station)`
+
+`june_stations_df = pd.DataFrame(June_stations, columns=["Station_id"," Avg June Temp"])`
+
+`june_stations_df`
+
+
+
+
+The query above shows that 
+
+We then created a dataframe to store the results
 
