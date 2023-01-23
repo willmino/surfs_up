@@ -102,9 +102,11 @@ The resulting summary statistics table was visualized below:
 
 From the statistical analysis of the summary tables we constructed for June and December, the mean tempeartures in these months were 74.94 and 71.04 respectively. A small difference of 3.9 degrees in the average temperature between the months of June and December illustrated a high likelihood of favorable weather year-long for surfing and ice cream. This suggested that the location and weather would be the perfect conditions for the Surf and Ice Cream Shop and that the company could likely be successful. To further support this claim, the first quartile of temperature measurements for both June and December was at least 69 degrees. This suggested that 75% of the time, the weather would be highly favorable, and at least 69 degrees at this specific location. However, it might be possible that more measurements in the months of June and December could change the statistics such as the average temperature. We would only be able to tell if there was a larger sample of measurements for the next couple of years to compare to these previous measurements. One final precaution for fairweather consumers or inestors at the Surf and Ice Cream shop would be that the minimum temperature in the month of december was 56 degrees. This temperature would not be ideal for surfing or ice cream. To counter this, and further bolster investment support of the business, the high temperatures for the months of June and December were respectively 85 and 83 degrees. Overall, these temperature measurements would be highly conducive to the success of a "Surf and Ice Cream Shop" in Hawaii.
 
-If W. Avy wanted even further evidence to reinforce his investment decision he would need to see how the temperature measurement from each station lead to a very high degree of accuracy determining the average temeprature for each month.
+### Additional Queries
 
-The first additional query we performed was to show that the average temperature taken in June was the same for all nine stations. To do this, we selected for the `Station.station` name and the average of all the temperature measurements gt each station `func.avg(Measurement.obs)`. We again filtered the date for June and used the `group_by()` function to group each average June temperature by the station name. We stored the results of the query in a dataframe and used the `.describe()` funcion once again to produce a statistics summary. The resulting 
+If W. Avy wanted even more evidence to reinforce his investment decision he would need to see how the temperature measurement from each station lead to a very high degree of accuracy determining the average temeprature for each month.
+
+The first additional query we performed was to show that the average temperature taken in June was the same for all nine weather stations. To do this, we selected for the `Station.station` name and the average of all the temperature measurements at each station `func.avg(Measurement.obs)`. We again filtered the query by the date for June and used the `group_by()` function to group each average June temperature by the station name. We stored the results of the query in a dataframe and used the `.describe()` function once again to produce a statistics summary. The resulting below showed that the temperatures taken at each station were identical. This was because the average temperature for each station in the month of June was the same. The high degree of accuracy in temperature measurements for each station was great data to help reinforce W. Avy's decision to invest in the Surf and Ice Cream shop.
 
 `June_stations = session.query(Station.station, func.avg(Measurement.tobs)).\`
 
@@ -119,7 +121,4 @@ The first additional query we performed was to show that the average temperature
 ![june_stations_df](https://github.com/willmino/surfs_up/blob/main/images/June_stations.png)
 
 
-The query above shows that 
-
-We then created a dataframe to store the results
 
