@@ -116,7 +116,7 @@ The first additional query we performed was to show that the average temperature
 
 `june_stations_df`
 
-
+![june_stations_df](https://github.com/willmino/surfs_up/blob/main/images/June_stations.png)
 
 
 The query above shows that 
