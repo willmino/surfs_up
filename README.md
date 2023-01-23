@@ -129,3 +129,6 @@ We performed one final query to highlight the accuracy of the data and help conv
 `december_stations_df = pd.DataFrame(December_stations, columns=["Station_id"," Avg December Temps"])`
 
 `december_stations_df.describe()`
+
+![December_stations](https://github.com/willmino/surfs_up/blob/main/images/December_stations.png)
+
