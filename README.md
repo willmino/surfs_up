@@ -1,5 +1,4 @@
 # surfs_up
-SQLite database weather analysis for opening a surf and shake shop on the Big Island.
 
 ## Overview
 The purpose of this analysis was to help W. Avy, the primary investor in an upcoming "Surf and Ice Cream Shop" in Hawaii, with processing weather and temperature data into key figures. We wanted to show him some insights into the weather patterns around the months of June and December so that he would have enough statistical data to feel comfortable about openining the shop in such a location.
@@ -86,8 +85,13 @@ The resulting summary statistics table was visualized below:
 ![December_Temps](https://github.com/willmino/surfs_up/blob/main/images/December_Temperatures.png)
 
 
+## Bulleted List Results
 
+* From all years `hawaii.sqlite` database, the mean temperature in Hawaii in the month of June was 74.94. The mean temperature in Hawaii the month of December is 71.04 There is a marginal difference of 3.9 degrees in the average temperature between the months of June and December. 
 
+* Highlighting the pleasant nature of the Hawaiian weather, we can see that the first quartile of the data is at a temperature of 69 degrees. This means that 75% of the temperature measurements were above 69 degrees. Statistically, a surfer will experience amazing 69 degree or higher weather 75% of the time even in the month of December! This same logic applies to the temperature in the months of June. Since the first quartile of the data is at 74 degrees, 75% of the temperature readings from June are above 74 degrees. This is also highly farorable for Surfing and Ice cream.
+
+* There were less measurements taken in the month of December compared to June. December had 1517 temperature measurements taken and June had 1700 temperature measurements. If the previous 1517 measurements were accurate for the actual temperature experience in December, then additional measurements for December would likely not change the statistics. For example, if 200 more measurements were taken in the month of December, the mean would likely not change if the measurements were already accurate. However, if the additional measurements taken in December had cause the mean temperature to decrease, then it would suggest that the original temperature measurements in December did not have high accuracy.
 
 
 
@@ -95,4 +99,7 @@ The resulting summary statistics table was visualized below:
 
 
 ## Summary
+
+In any given year from the `hawaii.sqlite` database, the mean temperature in Hawaii in the month of June is 74.94. The mean temperature in Hawaii in the month of December is 71.04 A marginal difference of 3.9 degrees in the average temperature between the months of June and December bodes very well for the year-long demand for surfing and ice cream in Hawaii. Since the temperature does not change much, accoding to the data, the moderately warm weather of Hawaii will entice customers to consume the Surf products and Ice Cream that the shop will have to offer. Since customers are likely to bring business to the shop all year long. W. Avy should feel confident in his investment.
+
 
