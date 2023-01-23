@@ -1,7 +1,7 @@
 # surfs_up
 
 ## Overview
-The purpose of this analysis was to help W. Avy, the primary investor in an upcoming "Surf and Ice Cream Shop" in Hawaii, with processing weather and temperature data into key figures. We wanted to show him some insights into the weather patterns around the months of June and December so that he would have enough statistical data to feel comfortable about openining the shop in such a location.
+The purpose of this analysis was to help W. Avy, the primary investor in an upcoming "Surf and Ice Cream Shop" in Hawaii, with processing weather and temperature data into key figures. We wanted to show him some insights into the weather patterns around the months of June and December so that he would have enough statistical data to feel comfortable about opening the shop in such a location.
 ### Purpose
 We used Pandas DataFrames, SQLite, and SQLAlchemy to create an engine from a SQLite file containing all the weather data we needed. We then processed the weather data using SQL queries on the SQLite database in order to observe some key weather statistics for the months of June and December in Hawaii.
 
