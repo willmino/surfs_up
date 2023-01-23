@@ -106,7 +106,7 @@ From the statistical analysis of the summary tables we constructed for June and 
 
 If W. Avy wanted even more evidence to reinforce his investment decision he would need to see how the temperature measurement from each station lead to a very high degree of accuracy determining the average temeprature for each month.
 
-The first additional query we performed was to show that the average temperature taken in June was the same for all nine weather stations. To do this, we selected for the `Station.station` name and the average of all the temperature measurements at each station `func.avg(Measurement.obs)`. We again filtered the query by the date for June and used the `group_by()` function to group each average June temperature by the station name. We stored the results of the query in a dataframe and used the `.describe()` function once again to produce a statistics summary. The resulting below showed that the temperatures taken at each station were identical. This was because the average temperature for each station in the month of June was the same. The high degree of accuracy in temperature measurements for each station was great data to help reinforce W. Avy's decision to invest in the Surf and Ice Cream shop.
+The first additional query we performed was to show that the average temperature taken in June was the same for all nine weather stations. To do this, we selected for the `Station.station` name and the average of all the temperature measurements at each station `func.avg(Measurement.obs)`. We again filtered the query by the date for June and used the `group_by()` function to group each average June temperature by the station name. We stored the results of the query in a dataframe. The resulting dataframe below showed that the temperatures taken at each station were identical. This was because the average temperature for each station in the month of June was the same. The high degree of accuracy in temperature measurements for each station was great data to help reinforce W. Avy's decision to invest in the Surf and Ice Cream shop.
 
 `June_stations = session.query(Station.station, func.avg(Measurement.tobs)).\`
 
@@ -120,5 +120,12 @@ The first additional query we performed was to show that the average temperature
 
 ![june_stations_df](https://github.com/willmino/surfs_up/blob/main/images/June_stations.png)
 
+We performed one final query to highlight the accuracy of the data and help convince W. Avy that the conditions could not be more perfect for his business investment in the store. This query selected all of the `Station.station` names for for temperature measurements in December from all years. We then stored the data in a dataframe. We can see there are were 13653 different measurements taken in Hawaii. After performing the `.describe()` function, we could see that the same mean December temperature was seen as before at 71.04 degrees.
 
+`December_stations = session.query(Station.station, Measurement.tobs).\`
 
+&nbsp;&nbsp;&nbsp;&nbsp;`filter(Measurement.date.like('%-12-%')).\`
+
+`december_stations_df = pd.DataFrame(December_stations, columns=["Station_id"," Avg December Temps"])`
+
+`december_stations_df.describe()`
