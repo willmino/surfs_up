@@ -120,8 +120,7 @@ The first additional query we performed was to show that the average temperature
 
 ![june_stations_df](https://github.com/willmino/surfs_up/blob/main/images/June_stations.png)
 
-We performed one final query to highlight the accuracy of the data and help convince W. Avy that the conditions could not be more perfect for his business investment in the store. This query selected all of the `Station.station` names for for temperature measurements in December from all years. We then stored the data in a dataframe. We can see there are were 13653 different measurements taken in Hawaii. After performing the `.describe()` function, we could see that the same mean December temperature was seen as before at 71.04 degrees.
-
+We performed one final query to highlight the accuracy of the data and help convince W. Avy that the conditions could not be more perfect for his business investment in the store. This query selected all of the `Station.station` names for temperature measurements in December from all years. We then stored the data in a dataframe. We can see there are were 13653 different measurements taken in Hawaii. After performing the `.describe()` function, we could see that the same mean December temperature was seen as before at 71.04 degrees. This further suggested that all of the measurements taken from each timepoint at each weather station were identical. Since the number of apparent measurements increased from 1,517 to 13,653 between the first and last December weather queries, and the resulting mean December temperature remaining the same, the data was truly accurate.
 `December_stations = session.query(Station.station, Measurement.tobs).\`
 
 &nbsp;&nbsp;&nbsp;&nbsp;`filter(Measurement.date.like('%-12-%')).\`
